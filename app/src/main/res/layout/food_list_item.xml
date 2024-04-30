@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/xlarge_112"
+    android:layout_marginHorizontal="@dimen/normal_100"
+    android:layout_marginBottom="@dimen/normal_100"
+    app:cardCornerRadius="@dimen/tiny_162_5"
+    app:strokeColor="@color/item_list_rectangle"
+    app:strokeWidth="@dimen/tiny_100">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clStatus"
+            android:layout_width="@dimen/normal_150"
+            android:layout_height="@dimen/hide"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:gravity="center"
+            android:background="@color/green">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_100"
+            android:layout_marginEnd="@dimen/large_150"
+            android:layout_marginTop="4dp"
+            android:lines="2"
+            android:ellipsize="end"
+            android:textColor="@color/item_list_text_color"
+            android:textSize="@dimen/text_small_175"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/clStatus"
+            app:layout_constraintEnd_toStartOf="@+id/tvType"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Lechuga" />
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/tvName"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/normal_100"
+            android:textColor="@color/item_list_text_color"
+            android:textSize="@dimen/title_text_normal_size"
+            tools:text="Hortaliza" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:textColor="@color/item_list_light_text_color"
+            android:textSize="@dimen/title_text_small_size"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvName"
+            tools:text="29/04/24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
+
+
+

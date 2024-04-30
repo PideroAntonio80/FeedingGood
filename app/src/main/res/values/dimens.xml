@@ -1,0 +1,88 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- TEXT SIZE -->
+    <dimen name="text_small_80">8sp</dimen>
+    <dimen name="text_small_90">9sp</dimen>
+    <dimen name="text_small_100">10sp</dimen>
+    <dimen name="text_small_125">12sp</dimen>
+    <dimen name="text_small_112_5">13sp</dimen>
+    <dimen name="text_small_150">14sp</dimen>
+    <dimen name="text_small_175">16sp</dimen>
+
+    <dimen name="text_normal_100">18sp</dimen>
+    <dimen name="text_normal_125">20sp</dimen>
+    <dimen name="text_normal_150">24sp</dimen>
+    <dimen name="text_normal_175">30sp</dimen>
+
+    <!-- DP SIZE -->
+    <dimen name="hide">0dp</dimen>
+
+    <dimen name="tiny_100">1dp</dimen>
+    <dimen name="tiny_125">2dp</dimen>
+    <dimen name="tiny_150">4dp</dimen>
+    <dimen name="tiny_162_5">5dp</dimen>
+    <dimen name="tiny_175">6dp</dimen>
+    <dimen name="tiny_200">7dp</dimen>
+
+    <dimen name="small_100">8dp</dimen>
+    <dimen name="small_125">10dp</dimen>
+    <dimen name="small_150">12dp</dimen>
+    <dimen name="small_175">14dp</dimen>
+
+    <dimen name="normal_100">16dp</dimen>
+    <dimen name="normal_125">20dp</dimen>
+    <dimen name="normal_150">24dp</dimen>
+    <dimen name="normal_175">28dp</dimen>
+
+    <dimen name="large_100">32dp</dimen>
+    <dimen name="large_112">36dp</dimen>
+    <dimen name="large_125">40dp</dimen>
+    <dimen name="large_137">44dp</dimen>
+    <dimen name="large_150">48dp</dimen>
+    <dimen name="large_175">56dp</dimen>
+
+    <dimen name="xlarge_100">64dp</dimen>
+    <dimen name="xlarge_112">70dp</dimen>
+    <dimen name="xlarge_125">80dp</dimen>
+    <dimen name="xlarge_135">85dp</dimen>
+    <dimen name="xlarge_150">96dp</dimen>
+    <dimen name="xlarge_160">105dp</dimen>
+    <dimen name="xlarge_175">112dp</dimen>
+
+    <dimen name="xxlarge_100">128dp</dimen>
+    <dimen name="xxlarge_125">160dp</dimen>
+    <dimen name="xxlarge_133">170dp</dimen>
+    <dimen name="xxlarge_140">180dp</dimen>
+    <dimen name="xxlarge_150">192dp</dimen>
+    <dimen name="xxlarge_160">200dp</dimen>
+    <dimen name="xxlarge_175">224dp</dimen>
+    <dimen name="xxlarge_200">238dp</dimen>
+    <dimen name="xxlarge_210">245dp</dimen>
+
+    <dimen name="xxxlarge_100">256dp</dimen>
+    <dimen name="xxxlarge_115">300dp</dimen>
+    <dimen name="xxxlarge_120">400dp</dimen>
+    <dimen name="xxxlarge_125">512dp</dimen>
+    <dimen name="xxxlarge_150">1024dp</dimen>
+    <dimen name="xxxlarge_175">2048dp</dimen>
+
+    <!-- ~~~~~~~~~~ -->
+    <!-- CARD VIEW -->
+    <!-- ~~~~~~~~~~ -->
+
+    <dimen name="card_view_height">60dp</dimen>
+    <dimen name="image_card_view_width">150dp</dimen>
+    <dimen name="title_text_size">16sp</dimen>
+    <dimen name="title_text_medium_size">14sp</dimen>
+    <dimen name="title_text_normal_size">13sp</dimen>
+    <dimen name="title_text_small_size">12sp</dimen>
+
+    <dimen name="text_small_weight">400</dimen>
+    <dimen name="text_medium_weight">500</dimen>
+    <dimen name="text_normal_weight">600</dimen>
+
+    <dimen name="edit_text_height">214dp</dimen>
+</resources>

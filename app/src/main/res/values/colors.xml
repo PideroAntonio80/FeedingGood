@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">@color/dpostpay_blue_logo</color>
+    <color name="accent">#F88379</color>
+
+    <color name="black_regular">#484848</color>
+    <color name="blue">#EFF9FC</color>
+    <color name="blue_sky">#DBF8FF</color>
+    <color name="blue_dark">#288298</color>
+    <color name="blue_regular">#2E86DE</color>
+    <color name="blue_medium">#43B8D3</color>
+    <color name="blue_light">#509FFF</color>
+    <color name="blue_lighter">#EBFBFF</color>
+    <color name="coral_regular">#FF9087</color>
+    <color name="coral_dark">#B3655F</color>
+    <color name="green_dark">#82CCDD</color>
+    <color name="green_regular">#1DD6B0</color>
+    <color name="green">#3C9140</color>
+    <color name="green_fluor">#85f23a</color>
+    <color name="grey_dark">#686868</color>
+    <color name="grey_regular">#9A9A9A</color>
+    <color name="grey_light">#E0E0E0</color>
+    <color name="grey_lighter">#F2F2F2</color>
+    <color name="orange">#FF9800</color>
+    <color name="orange_regular">#FFBC7B</color>
+    <color name="pink_dark">#F368E0</color>
+    <color name="pink_regular">#FF9FF3</color>
+    <color name="purple_dark">#A55EEA</color>
+    <color name="purple_regular">#D5AAFF</color>
+    <color name="red_dark">#FF6B6B</color>
+    <color name="red_regular">#E6827A</color>
+    <color name="red_fluor">#DA1D1D</color>
+    <color name="yellow">#FFFF00</color>
+
+    <color name="dpostpay_blue_logo">#22aae2</color>
+    <color name="tab_menu_stroke">#F7F7F7</color>
+    <color name="tab_menu_select">#C5EDFF</color>
+    <color name="tab_menu_select_text_true">#474747</color>
+    <color name="tab_menu_select_text_false">#5C5C5C</color>
+    <color name="tab_menu_icon_background_start_color">#FFC165</color>
+    <color name="tab_menu_icon_background_end_color">#FFCC49</color>
+    <color name="tab_menu_icon_background_datafono">#D790D0</color>
+
+    <color name="item_list_rectangle">#F4F4F4</color>
+    <color name="item_list_rectangle_border">#56F4F4F4</color>
+    <color name="item_list_text_color">#4F4F4F</color>
+    <color name="item_list_light_text_color">#979797</color>
+
+    <color name="pago_link_detail_rectangle_border">#ECECEC</color>
+
+    <color name="item_list_status_datafono_pagado">#BDEADB</color>
+    <color name="item_list_status_datafono_pagado_text">#0A6F4D</color>
+    <color name="item_list_status_datafono_pendiente">#FFC8A1</color>
+    <color name="item_list_status_datafono_pendiente_text">#C56016</color>
+    <color name="item_list_status_datafono_expirado">#d980f9</color>
+    <color name="item_list_status_datafono_expirado_text">#572364</color>
+    <color name="item_list_status_datafono_devuelto">#87CEFA</color>
+    <color name="item_list_status_datafono_devuelto_text">#4169E1</color>
+    <color name="item_list_status_datafono_cancelado_indefinido">#FF9292</color>
+    <color name="item_list_status_datafono_cancelado_indefinido_text">#9E3737</color>
+
+    <color name="til_number_filter_hint">#BDBDBD</color>
+    <color name="text_filter_color">#262626</color>
+
+    <color name="pago_link_detail_separator">#E9E9FF</color>
+
+    <color name="pago_link_detail_button_reenviar">#034780</color>
+
+    <color name="pago_enviado_start_color">#5AB9E4</color>
+    <color name="pago_enviado_end_color">#AED1FF</color>
+    <color name="pago_enviado_shadow_color">#979797</color>
+    <color name="pago_enviado_circle_big">#EEF6FA</color>
+    <color name="pago_enviado_circle_small">#D4EAF4</color>
+    <color name="pago_enviado_pago_link_title">#2C2C2C</color>
+    <color name="pago_enviado_button_solicitud_enviada_background">#BCFFD3</color>
+    <color name="pago_enviado_button_solicitud_enviada_text">#159500</color>
+    <color name="pago_enviado_button_consultar_pagos_background">#034780</color>
+</resources>
