@@ -1,21 +1,51 @@
 <resources>
     <string name="app_name">FeedingGood</string>
 
+    <string name="title_login">Login</string>
     <string name="title_food_list">Alimentos</string>
     <string name="title_food_detail">Detalle</string>
 
+    <string name="button_login">Iniciar</string>
+    <string name="button_register">Registrar</string>
     <string name="button_save">Guardar</string>
+    <string name="button_update">Actualizar</string>
     <string name="button_cancel">Cancelar</string>
 
     <string name="content_description">Descripción del elemento</string>
     <string name="empty_list">Lista vacía</string>
 
-    <string name="food_list_adapter_title">ALIMENTOS</string>
+    <string name="login_title">Inicio de Sesión</string>
+    <string name="login_user_hint">Nombre de usuario…</string>
+    <string name="login_password_hint">Contraseña…</string>
+    <string name="login_keep_logged">Mantener sesión iniciada.</string>
+    <string name="login_error">* Debes rellenar todos los campos</string>
+    <string name="login_empty_user">* Debes rellenar el campo Usuario</string>
+    <string name="login_empty_password">* Debes rellenar el campo Contraseña</string>
+    <string name="login_register_created">Usuario registrado</string>
+    <string name="login_unknown_user_error">! Usuario o contraseña incorrectos</string>
+    <string name="login_credentials_failed">No existe este usuario</string>
 
+    <string name="food_list_adapter_title">ALIMENTOS</string>
+    <string name="food_list_user_title">Usuario: %s</string>
+
+    <string name="food_detail_fragment_nutritional_values_title">Valores nutricionales</string>
+    <string name="food_detail_fragment_is_vegetable">Vegetal</string>
+    <string name="food_detail_fragment_is_not_vegetable">No vegetal</string>
+    <string name="food_detail_fragment_calories">Calorías: %s</string>
+    <string name="food_detail_fragment_carbohydrates">Carbohidratos: %s</string>
+    <string name="food_detail_fragment_fat">Grasas: %s</string>
+    <string name="food_detail_fragment_proteins">Proteínas: %s</string>
+    <string name="food_detail_fragment_edit_info">* Pulse sobre los campos con este símbolo para editarlos.</string>
 
     <string name="alert_are_you_sure_text">Vas a eliminar todos los registros.\n¿Estás seguro?</string>
+    <string name="alert_are_you_sure_text_single">Vas a eliminar este registro.\n¿Estás seguro?</string>
     <string name="alert_accept">Sí</string>
     <string name="alert_cancel">No</string>
+
+    <string name="dialog_register_title">Registra un nuevo Usuario</string>
+    <string name="dialog_register_name_hint">Nombre de usuario…</string>
+    <string name="dialog_register_pass_hint">Contraseña…</string>
+    <string name="dialog_register_error">* Debes rellenar todos los campos</string>
 
     <string name="dialog_with_two_buttons_title">Registra un nuevo alimento</string>
     <string name="dialog_with_two_buttons_name_hint">Nombre…</string>
@@ -26,4 +56,8 @@
     <string name="dialog_with_two_buttons_proteins_hint">Proteínas…</string>
     <string name="dialog_with_two_buttons_is_vegetable">Vegetal</string>
     <string name="dialog_with_two_buttons_error">* Debes rellenar todos los campos</string>
+
+    <string name="dialog_with_two_buttons_updating_title">Editar Dato</string>
+    <string name="dialog_with_two_buttons_updating_data_hint">Dato nuevo…</string>
+    <string name="dialog_with_two_buttons_updating_error">* Debes rellenar el campo</string>
 </resources>

@@ -5,17 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
+import com.diusframi.feedinggood.R
 import com.diusframi.feedinggood.data.localdb.database.FeedingGoodDatabase
 import com.diusframi.feedinggood.data.localdb.model.FoodEntity
 import com.diusframi.feedinggood.databinding.DialogWithTwoButtonsBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-class DialogWithTwoButtons(
-    private val onButtonYesClick: (() -> Unit)? = null,
-    private val onButtonNoClick: (() -> Unit)? = null
-) : BaseDialog<DialogWithTwoButtonsBinding>() {
+class DialogWithTwoButtons : BaseDialog<DialogWithTwoButtonsBinding>() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,6 +38,8 @@ class DialogWithTwoButtons(
 
             dialogWithButtonYes.setOnClickListener {
 
+                dialogWithButtonYes.isEnabled = false
+
                 if (etName.text?.isEmpty() == false &&
                     etType.text?.isEmpty() == false &&
                     etCalories.text?.isEmpty() == false &&
@@ -54,17 +57,29 @@ class DialogWithTwoButtons(
                         proteins = etProteins.text.toString(),
                         date = System.currentTimeMillis())
 
-                    insertInDb(newFoodEntity)
+                    lifecycleScope.launch(Dispatchers.IO) {
 
-                    onButtonYesClick?.invoke()
+                        val deferred = async { FeedingGoodDatabase.database.getFoodDao().insert(newFoodEntity) }
+                        deferred.await()
+
+                        withContext(Dispatchers.Main) {
+                            dialogWithButtonYes.isEnabled = true
+                        }
+
+                        dismiss()
+                    }
                 }
                 else {
+                    dialogWithButtonYes.isEnabled = true
+
                     tvError.visibility = View.VISIBLE
                 }
             }
 
             dialogWithButtonNo.setOnClickListener {
-                onButtonNoClick?.invoke()
+                dialogWithButtonYes.isEnabled = true
+
+                dismiss()
             }
 
             etName.setOnTouchListener { view, motionEvent ->
@@ -96,15 +111,6 @@ class DialogWithTwoButtons(
                 tvError.visibility = View.GONE
                 false
             }
-        }
-    }
-
-    private fun insertInDb(foodEntity: FoodEntity) {
-
-        val myCoroutine = CoroutineScope(Dispatchers.IO)
-
-        myCoroutine.launch(Dispatchers.IO) {
-            FeedingGoodDatabase.database.getDao().insert(foodEntity)
         }
     }
 }

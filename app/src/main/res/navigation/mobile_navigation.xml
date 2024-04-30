@@ -3,7 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/navigation_food_list_fragment">
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.diusframi.feedinggood.ui.login.LoginFragment"
+        android:label="@string/title_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_food_list_fragment"
+            app:destination="@id/navigation_food_list_fragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_food_list_fragment"
@@ -17,7 +26,7 @@
 
     <fragment
         android:id="@+id/navigation_food_detail_fragment"
-        android:name="com.diusframi.feedinggood.ui.FoodDetailFragment"
+        android:name="com.diusframi.feedinggood.ui.foodDetail.FoodDetailFragment"
         android:label="@string/title_food_detail"
         tools:layout="@layout/fragment_food_detail" />
 

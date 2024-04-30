@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/clFoodDetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    tools:background="@color/red_regular">
 
     <TextView
         android:id="@+id/tvId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal_125"
         tools:text="1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -16,9 +23,22 @@
         android:layout_marginStart="@dimen/normal_100"/>
 
     <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        tools:text="29/04/24"
+        app:layout_constraintTop_toTopOf="@+id/tvId"
+        app:layout_constraintBottom_toBottomOf="@+id/tvId"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/normal_100"/>
+
+    <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal_150"
         tools:text="Lechuga"
         app:layout_constraintTop_toBottomOf="@+id/tvId"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,6 +49,8 @@
         android:id="@+id/tvType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal_100"
         tools:text="Hortaliza"
         app:layout_constraintTop_toBottomOf="@+id/tvName"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,60 +61,86 @@
         android:id="@+id/tvIsVegetable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Sí"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal_100"
+        tools:text="Vegetal"
+        app:layout_constraintTop_toTopOf="@+id/tvName"
+        app:layout_constraintBottom_toBottomOf="@+id/tvName"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/normal_100" />
+
+    <TextView
+        android:id="@+id/tvNutritionalValuesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_normal_100"
+        android:text="@string/food_detail_fragment_nutritional_values_title"
         app:layout_constraintTop_toBottomOf="@+id/tvType"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/normal_100"
-        android:layout_marginStart="@dimen/normal_100"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/normal_175"/>
 
     <TextView
         android:id="@+id/tvCalories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="21"
-        app:layout_constraintTop_toBottomOf="@+id/tvIsVegetable"
+        android:textColor="@color/white"
+        tools:text="Calorías: 21"
+        app:layout_constraintTop_toBottomOf="@+id/tvNutritionalValuesTitle"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/normal_100"
-        android:layout_marginStart="@dimen/normal_100"/>
+        android:layout_marginStart="@dimen/normal_100"
+        app:drawableStartCompat="@drawable/ic_edit" />
 
     <TextView
         android:id="@+id/tvCarbohydrates"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="1.5"
+        android:textColor="@color/white"
+        tools:text="Carbohidratos: 1.5"
         app:layout_constraintTop_toBottomOf="@+id/tvCalories"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/normal_100"
-        android:layout_marginStart="@dimen/normal_100"/>
+        android:layout_marginStart="@dimen/normal_100"
+        app:drawableStartCompat="@drawable/ic_edit"/>
 
     <TextView
         android:id="@+id/tvFat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="0"
+        android:textColor="@color/white"
+        tools:text="Grasas: 0"
         app:layout_constraintTop_toBottomOf="@+id/tvCarbohydrates"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/normal_100"
-        android:layout_marginStart="@dimen/normal_100"/>
+        android:layout_marginStart="@dimen/normal_100"
+        app:drawableStartCompat="@drawable/ic_edit"/>
 
     <TextView
         android:id="@+id/tvProteins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="4"
+        android:textColor="@color/white"
+        tools:text="Proteínas: 4"
         app:layout_constraintTop_toBottomOf="@+id/tvFat"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="@dimen/normal_100"
-        android:layout_marginStart="@dimen/normal_100"/>
+        android:layout_marginStart="@dimen/normal_100"
+        app:drawableStartCompat="@drawable/ic_edit"/>
 
     <TextView
-        android:id="@+id/tvDate"
+        android:id="@+id/tvEditInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="29/04/24"
-        app:layout_constraintTop_toBottomOf="@+id/tvProteins"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_small_100"
+        android:lines="1"
+        android:text="@string/food_detail_fragment_edit_info"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/normal_100"
-        android:layout_marginStart="@dimen/normal_100"/>
+        android:layout_marginBottom="@dimen/normal_100"
+        android:layout_marginStart="@dimen/normal_100"
+        app:drawableStartCompat="@drawable/ic_edit"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

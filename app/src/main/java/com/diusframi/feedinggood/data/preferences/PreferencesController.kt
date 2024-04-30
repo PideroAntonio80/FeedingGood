@@ -8,6 +8,7 @@ class PreferencesController(val context: Context) {
 
     val MY_USER_NAME = "myUserName"
     val MY_USER_PASS = "myUserPass"
+    val MY_SESSION_KEPT = "mySessionKept"
 
     val storage = context.getSharedPreferences(SHARED_PREFERENCES_NAME, 0)
 
@@ -25,5 +26,13 @@ class PreferencesController(val context: Context) {
 
     fun getUserPass(): String? {
         return storage.getString(MY_USER_PASS, "")
+    }
+
+    fun saveKeepSession(keep: Boolean) {
+        storage.edit().putBoolean(MY_SESSION_KEPT, keep).apply()
+    }
+
+    fun getKeepSession(): Boolean {
+        return storage.getBoolean(MY_SESSION_KEPT, false)
     }
 }

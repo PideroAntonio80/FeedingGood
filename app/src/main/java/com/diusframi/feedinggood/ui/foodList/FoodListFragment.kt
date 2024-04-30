@@ -12,19 +12,35 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diusframi.feedinggood.R
 import com.diusframi.feedinggood.data.localdb.model.FoodEntity
+import com.diusframi.feedinggood.data.localdb.model.UserLoginEntity
 import com.diusframi.feedinggood.databinding.FragmentFoodListBinding
+import com.diusframi.feedinggood.utils.DATE_FORMAT_FOOD
 import com.diusframi.feedinggood.utils.DialogWithTwoButtons
 import com.diusframi.feedinggood.utils.MY_FOOD_DETAIL_KEY
+import com.diusframi.feedinggood.utils.MY_USER_KEY
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
 
     private var _binding: FragmentFoodListBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var currentUser: UserLoginEntity
+
     private val viewModel: FoodListViewModel by viewModels()
 
     private var modalTwoButtons: DialogWithTwoButtons? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        arguments?.let {
+
+            currentUser = it.getSerializable(MY_USER_KEY) as UserLoginEntity
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -81,6 +97,12 @@ class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
             binding.clList.visibility = View.VISIBLE
             binding.tvEmptyList.visibility = View.GONE
 
+            binding.tvUser.text = currentUser.userName
+
+            val myDate = currentUser.date
+            val notificationDate = SimpleDateFormat(DATE_FORMAT_FOOD, Locale.getDefault()).format(myDate)
+            binding.tvDate.text = notificationDate
+
             val layoutManager = LinearLayoutManager(binding.root.context, LinearLayoutManager.VERTICAL, false)
             binding.rvLogs.layoutManager = layoutManager
             binding.rvLogs.setHasFixedSize(true)
@@ -95,14 +117,7 @@ class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
 
     private fun showModalTwoButtons() {
 
-        modalTwoButtons = DialogWithTwoButtons(
-            onButtonYesClick = {
-                modalTwoButtons?.dismiss()
-            },
-            onButtonNoClick = {
-                modalTwoButtons?.dismiss()
-            }
-        )
+        modalTwoButtons = DialogWithTwoButtons()
         modalTwoButtons?.show(this.childFragmentManager, modalTwoButtons!!.tag)
     }
 
@@ -110,6 +125,18 @@ class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
         val bundle = Bundle()
         bundle.putSerializable(MY_FOOD_DETAIL_KEY, item)
         findNavController().navigate(R.id.navigation_food_detail_fragment, bundle)
+    }
+
+    override fun onLongItemClick(item: FoodEntity) {
+
+        val areYouSure = AlertDialog.Builder(requireActivity())
+        areYouSure.setMessage(R.string.alert_are_you_sure_text_single)
+            .setCancelable(false)
+            .setPositiveButton(R.string.alert_accept) { _, _ ->
+                viewModel.deleteFoodVM(item)
+            }
+            .setNegativeButton(R.string.alert_cancel) { _, _ ->}
+        areYouSure.show()
     }
 
     override fun onDestroyView() {

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:filterTouchesWhenObscured="true"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/large_125"
+    android:paddingHorizontal="@dimen/large_125">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@color/white">
+
+        <!-- TITLE -->
+
+        <TextView
+            android:id="@+id/dialog_with_two_buttons_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="@dimen/normal_100"
+            android:background="@color/dpostpay_blue_logo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_normal_150"
+            android:text="@string/dialog_with_two_buttons_updating_title" />
+
+        <!-- TEXT FIELDS -->
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="@dimen/xxxlarge_100"
+            android:layout_height="@dimen/large_125"
+            android:layout_marginTop="@dimen/normal_150"
+            android:layout_marginStart="@dimen/normal_100"
+            android:padding="@dimen/small_100"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialog_with_two_buttons_title"
+            android:scrollbars="vertical"
+            android:gravity="top"
+            android:textColor="@color/item_list_text_color"
+            android:hint="@string/dialog_with_two_buttons_updating_data_hint"
+            android:background="@drawable/edit_text_background"
+            android:inputType="text"
+            android:autofillHints="" />
+
+        <LinearLayout
+            android:id="@+id/llError"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/large_125"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/etName"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/tiny_150"
+            android:layout_marginStart="@dimen/normal_100">
+
+            <TextView
+                android:id="@+id/tvError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normal_100"
+                android:textSize="@dimen/text_small_150"
+                android:textColor="@color/red_fluor"
+                android:textStyle="bold"
+                android:text="@string/dialog_with_two_buttons_updating_error"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+        </LinearLayout>
+
+        <!-- BUTTONS -->
+
+        <TextView
+            android:id="@+id/dialog_with_button_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/llError"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dialog_with_button_no"
+            android:layout_marginBottom="@dimen/normal_100"
+            android:textSize="@dimen/text_normal_125"
+            android:textColor="@color/dpostpay_blue_logo"
+            android:textStyle="bold"
+            android:text="@string/button_update"/>
+
+        <TextView
+            android:id="@+id/dialog_with_button_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/llError"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dialog_with_button_yes"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="@dimen/normal_100"
+            android:textSize="@dimen/text_normal_125"
+            android:textColor="@color/dpostpay_blue_logo"
+            android:textStyle="bold"
+            android:text="@string/button_cancel"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

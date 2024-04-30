@@ -22,16 +22,16 @@ data class FoodEntity(
     val isVegetable: Boolean,
 
     @ColumnInfo(name = "calories")
-    val calories: String,
+    var calories: String,
 
     @ColumnInfo(name = "carbohydrates")
-    val carbohydrates: String,
+    var carbohydrates: String,
 
     @ColumnInfo(name = "fat")
-    val fat: String,
+    var fat: String,
 
     @ColumnInfo(name = "proteins")
-    val proteins: String,
+    var proteins: String,
 
     @ColumnInfo(name = "date")
     val date: Long

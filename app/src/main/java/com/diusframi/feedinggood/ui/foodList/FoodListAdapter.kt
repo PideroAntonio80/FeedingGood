@@ -47,16 +47,22 @@ class FoodListAdapter(private val context: Context,
                 binding.clStatus.setBackgroundColor(context.resources.getColor(R.color.green))
             }
             else {
-                binding.clStatus.setBackgroundColor(context.resources.getColor(R.color.red_dark))
+                binding.clStatus.setBackgroundColor(context.resources.getColor(R.color.red_regular))
             }
 
             itemView.setOnClickListener {
                 itemClickListener?.onItemClick(foodEntity)
+            }
+
+            itemView.setOnLongClickListener {
+                itemClickListener?.onLongItemClick(foodEntity)
+                true
             }
         }
     }
 
     interface ItemClickListener {
         fun onItemClick(item: FoodEntity)
+        fun onLongItemClick(item: FoodEntity)
     }
 }

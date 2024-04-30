@@ -11,13 +11,20 @@ import kotlinx.coroutines.launch
 class FoodListViewModel : ViewModel() {
 
     fun getFoodListVM(): LiveData<List<FoodEntity>>? {
-        return FeedingGoodDatabase.database.getDao().getAll()
+        return FeedingGoodDatabase.database.getFoodDao().getAll()
     }
 
     fun deleteAllFoodVM() {
         viewModelScope.launch(Dispatchers.IO) {
 
-            FeedingGoodDatabase.database.getDao().deleteAll()
+            FeedingGoodDatabase.database.getFoodDao().deleteAll()
+        }
+    }
+
+    fun deleteFoodVM(foodEntity: FoodEntity) {
+        viewModelScope.launch(Dispatchers.IO) {
+
+            FeedingGoodDatabase.database.getFoodDao().delete(foodEntity)
         }
     }
 }

@@ -43,12 +43,36 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tvTitle" />
 
+            <TextView
+                android:id="@+id/tvUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_150"
+                android:layout_marginStart="@dimen/normal_100"
+                android:textSize="@dimen/text_small_125"
+                android:textStyle="bold"
+                tools:text="Usuario: Pedro Orós"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/small_150"
+                android:layout_marginEnd="@dimen/normal_100"
+                android:textSize="@dimen/text_small_125"
+                android:textStyle="bold"
+                tools:text="30/04/24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvLogs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/normal_100"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                app:layout_constraintTop_toBottomOf="@+id/tvUser"
                 tools:listitem="@layout/food_list_item" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
