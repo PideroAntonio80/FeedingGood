@@ -90,11 +90,11 @@ class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
     private fun loadData(list: List<FoodEntity>?) {
 
         if (list.isNullOrEmpty()) {
-            binding.clList.visibility = View.GONE
+            binding.rvLogs.visibility = View.GONE
             binding.tvEmptyList.visibility = View.VISIBLE
         }
         else {
-            binding.clList.visibility = View.VISIBLE
+            binding.rvLogs.visibility = View.VISIBLE
             binding.tvEmptyList.visibility = View.GONE
 
             binding.tvUser.text = currentUser.userName

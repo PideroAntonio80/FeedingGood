@@ -8,7 +8,7 @@
     android:id="@+id/clFoodDetail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:background="@color/red_regular">
+    tools:background="@color/pink">
 
     <TextView
         android:id="@+id/tvId"

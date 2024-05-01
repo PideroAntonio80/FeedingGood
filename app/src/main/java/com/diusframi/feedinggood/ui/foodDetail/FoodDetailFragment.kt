@@ -79,7 +79,7 @@ class FoodDetailFragment : Fragment() {
                 binding.clFoodDetail.setBackgroundColor(requireContext().resources.getColor(R.color.green))
             } else {
                 tvIsVegetable.text = resources.getString(R.string.food_detail_fragment_is_not_vegetable)
-                binding.clFoodDetail.setBackgroundColor(requireContext().resources.getColor(R.color.red_regular))
+                binding.clFoodDetail.setBackgroundColor(requireContext().resources.getColor(R.color.pink))
             }
 
             tvCalories.text = resources.getString(R.string.food_detail_fragment_calories, foodEntity.calories)

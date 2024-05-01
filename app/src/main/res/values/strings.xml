@@ -4,6 +4,8 @@
     <string name="title_login">Login</string>
     <string name="title_food_list">Alimentos</string>
     <string name="title_food_detail">Detalle</string>
+    <string name="menu_logout">Cerrar sesión</string>
+    <string name="menu_user_list">Lista de Usuarios</string>
 
     <string name="button_login">Iniciar</string>
     <string name="button_register">Registrar</string>
@@ -46,6 +48,7 @@
     <string name="dialog_register_name_hint">Nombre de usuario…</string>
     <string name="dialog_register_pass_hint">Contraseña…</string>
     <string name="dialog_register_error">* Debes rellenar todos los campos</string>
+    <string name="dialog_register_already_exist">! Este nombre de usuario ya existe</string>
 
     <string name="dialog_with_two_buttons_title">Registra un nuevo alimento</string>
     <string name="dialog_with_two_buttons_name_hint">Nombre…</string>

@@ -17,8 +17,23 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:paddingBottom="@dimen/tiny_175"
+            android:background="@color/orange_regular">
+
+            <!--<ImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_100"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/ic_menu"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTitle" />-->
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -67,15 +82,15 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvLogs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/normal_100"
-                app:layout_constraintTop_toBottomOf="@+id/tvUser"
+                android:layout_marginTop="@dimen/small_100"
+                app:layout_constraintTop_toBottomOf="@+id/clList"
                 tools:listitem="@layout/food_list_item" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/tvEmptyList"
@@ -100,7 +115,7 @@
         android:layout_gravity="end|bottom"
         android:layout_marginEnd="@dimen/normal_100"
         android:layout_marginBottom="@dimen/normal_100"
-        android:backgroundTint="@color/dpostpay_blue_logo"
+        android:backgroundTint="@color/orange"
         android:contentDescription="@string/content_description"
         android:src="@drawable/ic_add"
         app:fabSize="mini"

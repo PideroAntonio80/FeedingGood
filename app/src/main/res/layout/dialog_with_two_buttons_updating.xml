@@ -26,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:padding="@dimen/normal_100"
-            android:background="@color/dpostpay_blue_logo"
+            android:background="@color/orange_regular"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="@dimen/text_normal_150"
@@ -87,7 +87,7 @@
             app:layout_constraintEnd_toStartOf="@+id/dialog_with_button_no"
             android:layout_marginBottom="@dimen/normal_100"
             android:textSize="@dimen/text_normal_125"
-            android:textColor="@color/dpostpay_blue_logo"
+            android:textColor="@color/orange"
             android:textStyle="bold"
             android:text="@string/button_update"/>
 
@@ -101,7 +101,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="@dimen/normal_100"
             android:textSize="@dimen/text_normal_125"
-            android:textColor="@color/dpostpay_blue_logo"
+            android:textColor="@color/orange"
             android:textStyle="bold"
             android:text="@string/button_cancel"/>
 

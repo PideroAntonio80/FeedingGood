@@ -49,15 +49,29 @@ class DialogRegister : BaseDialog<DialogRegisterBinding>() {
 
                     lifecycleScope.launch(Dispatchers.IO) {
 
-                        val deferred = async { FeedingGoodDatabase.database.getUserLoginDao().insert(newUserLoginEntity) }
-                        deferred.await()
+                        val def = async { FeedingGoodDatabase.database.getUserLoginDao().getByUserName(newUserLoginEntity.userName) }
 
-                        withContext(Dispatchers.Main) {
-                            makeToast(resources.getString(R.string.login_register_created))
-                            registerButton.isEnabled = true
+                        val response = def.await()
+
+                        if (response == null) {
+
+                            val deferred = async { FeedingGoodDatabase.database.getUserLoginDao().insert(newUserLoginEntity) }
+                            deferred.await()
+
+                            withContext(Dispatchers.Main) {
+                                makeToast(resources.getString(R.string.login_register_created))
+                                registerButton.isEnabled = true
+                            }
+
+                            dismiss()
                         }
+                        else {
+                            withContext(Dispatchers.Main) {
+                                registerButton.isEnabled = true
 
-                        dismiss()
+                                tvAlreadyExist.visibility = View.VISIBLE
+                            }
+                        }
                     }
                 }
                 else {
@@ -76,11 +90,13 @@ class DialogRegister : BaseDialog<DialogRegisterBinding>() {
 
             etName.setOnTouchListener { view, motionEvent ->
                 tvError.visibility = View.GONE
+                tvAlreadyExist.visibility = View.GONE
                 false
             }
 
             etPass.setOnTouchListener { view, motionEvent ->
                 tvError.visibility = View.GONE
+                tvAlreadyExist.visibility = View.GONE
                 false
             }
         }

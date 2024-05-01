@@ -47,7 +47,7 @@ class FoodListAdapter(private val context: Context,
                 binding.clStatus.setBackgroundColor(context.resources.getColor(R.color.green))
             }
             else {
-                binding.clStatus.setBackgroundColor(context.resources.getColor(R.color.red_regular))
+                binding.clStatus.setBackgroundColor(context.resources.getColor(R.color.pink))
             }
 
             itemView.setOnClickListener {

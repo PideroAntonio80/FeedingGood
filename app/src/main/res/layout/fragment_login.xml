@@ -6,10 +6,19 @@
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/grey_lighter">
+    android:layout_height="match_parent">
 
     <!-- TEXT FIELDS -->
+
+    <ImageView
+        android:id="@+id/ivTomato"
+        android:layout_width="@dimen/xxxlarge_115"
+        android:layout_height="@dimen/xxxlarge_115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/tomato"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/etUser"
@@ -17,11 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/text_normal_150"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:layout_constraintVertical_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivTomato"
         app:errorTextColor="@color/red_fluor"
         app:endIconMode="clear_text">
 
