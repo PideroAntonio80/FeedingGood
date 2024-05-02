@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diusframi.feedinggood.FeedingGoodApplication.Companion.preferences
+import com.diusframi.feedinggood.MainActivity
 import com.diusframi.feedinggood.R
 import com.diusframi.feedinggood.data.localdb.model.FoodEntity
 import com.diusframi.feedinggood.databinding.FragmentFoodListBinding
@@ -30,6 +31,12 @@ class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
 
     private var modalTwoButtons: DialogWithTwoButtons? = null
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        (requireActivity() as MainActivity).supportActionBar!!.hide()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -47,6 +54,12 @@ class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
         observeViewModel()
 
         initListeners()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        (requireActivity() as MainActivity).supportActionBar!!.hide()
     }
 
     private fun observeViewModel() {

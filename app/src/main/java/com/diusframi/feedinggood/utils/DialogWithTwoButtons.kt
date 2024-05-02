@@ -6,11 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
-import com.diusframi.feedinggood.R
 import com.diusframi.feedinggood.data.localdb.database.FeedingGoodDatabase
 import com.diusframi.feedinggood.data.localdb.model.FoodEntity
 import com.diusframi.feedinggood.databinding.DialogWithTwoButtonsBinding
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch

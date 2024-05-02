@@ -10,10 +10,13 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diusframi.feedinggood.FeedingGoodApplication.Companion.preferences
+import com.diusframi.feedinggood.MainActivity
 import com.diusframi.feedinggood.R
+import com.diusframi.feedinggood.data.localdb.model.FoodEntity
 import com.diusframi.feedinggood.data.localdb.model.UserLoginEntity
 import com.diusframi.feedinggood.databinding.FragmentUserListBinding
 import com.diusframi.feedinggood.utils.DATE_FORMAT_FOOD
+import com.diusframi.feedinggood.utils.MY_FOOD_DETAIL_KEY
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -24,6 +27,12 @@ class UserListFragment : Fragment(), UserListAdapter.ItemClickListener {
     private val binding get() = _binding!!
 
     private val viewModel: UserListViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        (requireActivity() as MainActivity).supportActionBar!!.show()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

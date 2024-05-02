@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.diusframi.feedinggood.MainActivity
 import com.diusframi.feedinggood.R
 import com.diusframi.feedinggood.data.localdb.model.FoodEntity
 import com.diusframi.feedinggood.databinding.FragmentFoodDetailBinding
@@ -30,6 +31,8 @@ class FoodDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        (requireActivity() as MainActivity).supportActionBar!!.show()
 
         arguments?.let {
 

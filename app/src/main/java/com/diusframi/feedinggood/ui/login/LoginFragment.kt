@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.diusframi.feedinggood.FeedingGoodApplication.Companion.preferences
+import com.diusframi.feedinggood.MainActivity
 import com.diusframi.feedinggood.R
 import com.diusframi.feedinggood.databinding.FragmentLoginBinding
 import com.diusframi.feedinggood.utils.DialogRegister
@@ -28,6 +29,8 @@ class LoginFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        (requireActivity() as MainActivity).supportActionBar!!.hide()
 
         if (preferences.getKeepSession()) {
             findNavController().navigate(R.id.navigation_food_list_fragment)
@@ -49,6 +52,12 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initListeners()
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        (requireActivity() as MainActivity).supportActionBar!!.hide()
     }
 
     @SuppressLint("ClickableViewAccessibility")

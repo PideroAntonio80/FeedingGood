@@ -22,12 +22,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:paddingBottom="@dimen/tiny_175"
-            android:background="@color/orange_regular">
+            android:background="@color/orange">
 
             <ImageView
                 android:id="@+id/ivLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/large_100"
+                android:layout_height="@dimen/large_100"
                 android:layout_marginStart="@dimen/normal_100"
                 android:contentDescription="@string/content_description"
                 android:src="@drawable/ic_logout"
@@ -37,8 +37,8 @@
 
             <ImageView
                 android:id="@+id/ivUserList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/large_100"
+                android:layout_height="@dimen/large_100"
                 android:layout_marginStart="@dimen/normal_100"
                 android:contentDescription="@string/content_description"
                 android:src="@drawable/ic_user"
@@ -65,11 +65,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/normal_100"
                 android:contentDescription="@string/content_description"
-                android:tint="@color/black"
                 android:src="@drawable/ic_delete"
                 app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+                app:layout_constraintTop_toTopOf="@+id/tvTitle"
+                app:tint="@color/black" />
 
             <TextView
                 android:id="@+id/tvUser"

@@ -22,9 +22,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:paddingBottom="@dimen/tiny_175"
-            android:background="@color/orange_regular">
+            android:background="@color/orange">
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
                 android:text="@string/user_list_adapter_title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />-->
 
             <ImageView
                 android:id="@+id/ivDeleteAll"
@@ -43,33 +43,33 @@
                 android:layout_marginEnd="@dimen/normal_100"
                 android:contentDescription="@string/content_description"
                 android:src="@drawable/ic_delete"
-                app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/small_150"
+                android:layout_marginTop="@dimen/small_100"
                 android:layout_marginStart="@dimen/normal_100"
                 android:textSize="@dimen/text_small_125"
                 android:textStyle="bold"
                 tools:text="Usuario: Pedro Orós"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/small_150"
+                android:layout_marginTop="@dimen/tiny_100"
                 android:layout_marginEnd="@dimen/normal_100"
-                android:textSize="@dimen/text_small_125"
+                android:textSize="@dimen/text_small_100"
                 android:textStyle="bold"
                 tools:text="30/04/24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+                app:layout_constraintStart_toStartOf="@id/tvUser"
+                app:layout_constraintTop_toBottomOf="@+id/tvUser" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
