@@ -20,6 +20,9 @@ interface FoodDAO {
     @Query("select * from food_entity where id = :foodId")
     suspend fun getById(foodId: Int): FoodEntity?
 
+    @Query("select * from food_entity where name = :foodName")
+    suspend fun getByName(foodName: String): FoodEntity?
+
     @Query("DELETE FROM food_entity")
     suspend fun deleteAll()
 

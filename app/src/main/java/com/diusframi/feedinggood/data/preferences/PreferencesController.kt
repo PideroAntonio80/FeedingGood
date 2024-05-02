@@ -8,6 +8,7 @@ class PreferencesController(val context: Context) {
 
     val MY_USER_NAME = "myUserName"
     val MY_USER_PASS = "myUserPass"
+    val MY_USER_DATE = "myUserDate"
     val MY_SESSION_KEPT = "mySessionKept"
 
     val storage = context.getSharedPreferences(SHARED_PREFERENCES_NAME, 0)
@@ -20,12 +21,20 @@ class PreferencesController(val context: Context) {
         storage.edit().putString(MY_USER_PASS, pass).apply()
     }
 
+    fun saveUserDate(date: Long) {
+        storage.edit().putLong(MY_USER_DATE, date).apply()
+    }
+
     fun getUserName(): String? {
         return storage.getString(MY_USER_NAME, "")
     }
 
     fun getUserPass(): String? {
         return storage.getString(MY_USER_PASS, "")
+    }
+
+    fun getUserDate(): Long {
+        return storage.getLong(MY_USER_DATE, 0)
     }
 
     fun saveKeepSession(keep: Boolean) {

@@ -4,6 +4,7 @@
     <string name="title_login">Login</string>
     <string name="title_food_list">Alimentos</string>
     <string name="title_food_detail">Detalle</string>
+    <string name="title_user_list">Usuarios</string>
     <string name="menu_logout">Cerrar sesión</string>
     <string name="menu_user_list">Lista de Usuarios</string>
 
@@ -15,6 +16,8 @@
 
     <string name="content_description">Descripción del elemento</string>
     <string name="empty_list">Lista vacía</string>
+
+    <string name="splash_title">FEEDING GOOD</string>
 
     <string name="login_title">Inicio de Sesión</string>
     <string name="login_user_hint">Nombre de usuario…</string>
@@ -39,8 +42,15 @@
     <string name="food_detail_fragment_proteins">Proteínas: %s</string>
     <string name="food_detail_fragment_edit_info">* Pulse sobre los campos con este símbolo para editarlos.</string>
 
+    <string name="user_list_adapter_title">USUARIOS</string>
+    <string name="user_list_user_title">Usuario: %s</string>
+
+    <string name="user_list_item_name_title">Usuario:</string>
+    <string name="user_list_item_password_title">Clave:</string>
+
     <string name="alert_are_you_sure_text">Vas a eliminar todos los registros.\n¿Estás seguro?</string>
     <string name="alert_are_you_sure_text_single">Vas a eliminar este registro.\n¿Estás seguro?</string>
+    <string name="alert_are_you_sure_logout">Vas a cerrar la sesión.\n¿Estás seguro?</string>
     <string name="alert_accept">Sí</string>
     <string name="alert_cancel">No</string>
 
@@ -59,6 +69,7 @@
     <string name="dialog_with_two_buttons_proteins_hint">Proteínas…</string>
     <string name="dialog_with_two_buttons_is_vegetable">Vegetal</string>
     <string name="dialog_with_two_buttons_error">* Debes rellenar todos los campos</string>
+    <string name="dialog_with_two_buttons_already_exist">! Este alimento ya existe</string>
 
     <string name="dialog_with_two_buttons_updating_title">Editar Dato</string>
     <string name="dialog_with_two_buttons_updating_data_hint">Dato nuevo…</string>

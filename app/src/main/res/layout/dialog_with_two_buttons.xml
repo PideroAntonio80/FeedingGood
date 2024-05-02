@@ -146,7 +146,7 @@
             android:inputType="text"
             android:autofillHints="" />
 
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/llError"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/large_125"
@@ -168,7 +168,18 @@
                 android:visibility="gone"
                 tools:visibility="visible"/>
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tvAlreadyExist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/normal_100"
+                android:textSize="@dimen/text_small_150"
+                android:textColor="@color/red_fluor"
+                android:textStyle="bold"
+                android:text="@string/dialog_with_two_buttons_already_exist"
+                android:visibility="gone"/>
+
+        </FrameLayout>
 
         <!-- BUTTONS -->
 

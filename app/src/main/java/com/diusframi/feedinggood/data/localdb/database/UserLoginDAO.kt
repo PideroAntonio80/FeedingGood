@@ -14,9 +14,6 @@ interface UserLoginDAO {
     @Query("select * from user_login_entity")
     fun getAllLiveData(): LiveData<List<UserLoginEntity>>?
 
-    @Query("select * from user_login_entity")
-    fun getAll(): List<UserLoginEntity>?
-
     @Query("select * from user_login_entity where id = :userLoginEntityId")
     suspend fun getById(userLoginEntityId: Int): UserLoginEntity?
 
@@ -25,6 +22,9 @@ interface UserLoginDAO {
 
     @Query("select * from user_login_entity where user_name = :userName and password = :password")
     suspend fun getByUserNameAndPassword(userName: String, password:String): UserLoginEntity?
+
+    @Query("DELETE FROM user_login_entity")
+    suspend fun deleteAll()
 
     @Insert
     suspend fun insert(userLoginEntity: UserLoginEntity)

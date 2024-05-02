@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/normal_100"
+    android:layout_marginBottom="@dimen/normal_100"
+    app:cardCornerRadius="@dimen/tiny_162_5"
+    app:strokeColor="@color/item_list_rectangle"
+    app:strokeWidth="@dimen/tiny_100">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/flId"
+            android:layout_width="@dimen/large_100"
+            android:layout_height="@dimen/hide"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/orange_regular">
+
+            <TextView
+                android:id="@+id/tvId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/item_list_text_color"
+                android:textSize="@dimen/text_small_175"
+                android:textStyle="bold"
+                tools:text="1"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_100"
+            android:layout_marginTop="@dimen/tiny_175"
+            android:textColor="@color/item_list_text_color"
+            android:textSize="@dimen/text_small_175"
+            app:layout_constraintStart_toEndOf="@+id/flId"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/user_list_item_name_title" />
+
+        <TextView
+            android:id="@+id/tvNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/tiny_175"
+            android:textColor="@color/item_list_text_color"
+            android:textSize="@dimen/text_small_175"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tvNameTitle"
+            app:layout_constraintTop_toTopOf="@+id/tvNameTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/tvNameTitle"
+            tools:text="Pedro Orós" />
+
+        <TextView
+            android:id="@+id/tvPasswordTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameTitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/flId"
+            android:layout_marginStart="@dimen/normal_100"
+            android:layout_marginTop="@dimen/tiny_175"
+            android:layout_marginBottom="@dimen/tiny_175"
+            android:textColor="@color/item_list_text_color"
+            android:textSize="@dimen/text_small_175"
+            android:text="@string/user_list_item_password_title" />
+
+        <TextView
+            android:id="@+id/tvPasswordText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/tvPasswordTitle"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPasswordTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvNameText"
+            android:textColor="@color/item_list_text_color"
+            android:textSize="@dimen/text_small_175"
+            android:textStyle="bold"
+            tools:text="abc123" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/tvNameText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/normal_100"
+            android:textColor="@color/item_list_light_text_color"
+            android:textSize="@dimen/title_text_small_size"
+            tools:text="29/04/24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
+
+
+

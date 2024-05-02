@@ -13,7 +13,6 @@ import com.diusframi.feedinggood.FeedingGoodApplication.Companion.preferences
 import com.diusframi.feedinggood.R
 import com.diusframi.feedinggood.databinding.FragmentLoginBinding
 import com.diusframi.feedinggood.utils.DialogRegister
-import com.diusframi.feedinggood.utils.MY_USER_KEY
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -26,6 +25,14 @@ class LoginFragment : Fragment() {
     private val viewModel: LoginViewModel by viewModels()
 
     private var modalRegister: DialogRegister? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        if (preferences.getKeepSession()) {
+            findNavController().navigate(R.id.navigation_food_list_fragment)
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,12 +57,6 @@ class LoginFragment : Fragment() {
 
             loginButton.setOnClickListener {
                 if (!etUser.editText?.text.isNullOrEmpty() && !etPassword.editText?.text.isNullOrEmpty()) {
-
-                    if (cbKeepSession.isChecked) {
-                        preferences.saveKeepSession(true)
-                    } else {
-                        preferences.saveKeepSession(false)
-                    }
 
                     doLogin(etUser.editText?.text.toString(), etPassword.editText?.text.toString())
                 }
@@ -102,11 +103,21 @@ class LoginFragment : Fragment() {
 
             if (response != null) {
                 withContext(Dispatchers.Main) {
-                    clearErrors()
 
-                    val bundle = Bundle()
-                    bundle.putSerializable(MY_USER_KEY, response)
-                    findNavController().navigate(R.id.navigation_food_list_fragment, bundle)
+                    preferences.saveUserName(response.userName)
+                    preferences.saveUserPass(response.password)
+                    preferences.saveUserDate(response.date)
+
+                    if (binding.cbKeepSession.isChecked) {
+                        preferences.saveKeepSession(true)
+                    } else {
+                        preferences.saveKeepSession(false)
+                    }
+
+                    clearErrors()
+                    clearFields()
+
+                    findNavController().navigate(R.id.navigation_food_list_fragment)
                 }
             }
             else {
@@ -132,5 +143,6 @@ class LoginFragment : Fragment() {
     private fun clearFields() {
         binding.etUser.editText?.text?.clear()
         binding.etPassword.editText?.text?.clear()
+        binding.cbKeepSession.isChecked = false
     }
 }

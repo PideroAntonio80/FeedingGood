@@ -1,10 +1,7 @@
 package com.diusframi.feedinggood
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
@@ -34,29 +31,32 @@ class MainActivity : AppCompatActivity() {
         return findNavController(R.id.nav_host_fragment_activity_main).navigateUp()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.userList -> {
-                makeToast("List")
-
-                return true
-            }
-
-            R.id.logout -> {
-                makeToast("logout")
-
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    private fun makeToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.menu, menu)
+//        return super.onCreateOptionsMenu(menu)
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        when(item.itemId) {
+//            R.id.userList -> {
+//
+//                makeToast("List")
+//
+////                findNavController().navigate(R.id.navigation_food_detail_fragment)
+//
+//                return true
+//            }
+//
+//            R.id.logout -> {
+//                makeToast("logout")
+//
+//                return true
+//            }
+//        }
+//        return super.onOptionsItemSelected(item)
+//    }
+//
+//    private fun makeToast(message: String) {
+//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+//    }
 }

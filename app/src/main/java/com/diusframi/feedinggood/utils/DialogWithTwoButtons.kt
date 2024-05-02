@@ -15,6 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.Locale
 
 class DialogWithTwoButtons : BaseDialog<DialogWithTwoButtonsBinding>() {
 
@@ -48,7 +49,7 @@ class DialogWithTwoButtons : BaseDialog<DialogWithTwoButtonsBinding>() {
                     etProteins.text?.isEmpty() == false) {
 
                     val newFoodEntity = FoodEntity(
-                        name = etName.text.toString(),
+                        name = etName.text.toString().replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() },
                         type = etType.text.toString(),
                         isVegetable = cbIsVegetable.isChecked,
                         calories = etCalories.text.toString(),
@@ -59,14 +60,28 @@ class DialogWithTwoButtons : BaseDialog<DialogWithTwoButtonsBinding>() {
 
                     lifecycleScope.launch(Dispatchers.IO) {
 
-                        val deferred = async { FeedingGoodDatabase.database.getFoodDao().insert(newFoodEntity) }
-                        deferred.await()
+                        val def = async { FeedingGoodDatabase.database.getFoodDao().getByName(newFoodEntity.name) }
 
-                        withContext(Dispatchers.Main) {
-                            dialogWithButtonYes.isEnabled = true
+                        val response = def.await()
+
+                        if (response == null) {
+
+                            val deferred = async { FeedingGoodDatabase.database.getFoodDao().insert(newFoodEntity) }
+                            deferred.await()
+
+                            withContext(Dispatchers.Main) {
+                                dialogWithButtonYes.isEnabled = true
+                            }
+
+                            dismiss()
                         }
+                        else {
+                            withContext(Dispatchers.Main) {
+                                dialogWithButtonYes.isEnabled = true
 
-                        dismiss()
+                                tvAlreadyExist.visibility = View.VISIBLE
+                            }
+                        }
                     }
                 }
                 else {
@@ -83,6 +98,7 @@ class DialogWithTwoButtons : BaseDialog<DialogWithTwoButtonsBinding>() {
             }
 
             etName.setOnTouchListener { view, motionEvent ->
+                tvAlreadyExist.visibility = View.GONE
                 tvError.visibility = View.GONE
                 false
             }

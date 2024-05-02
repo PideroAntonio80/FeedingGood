@@ -8,7 +8,8 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.diusframi.feedinggood.ui.login.LoginFragment"
-        android:label="@string/title_login" >
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_navigation_food_list_fragment"
             app:destination="@id/navigation_food_list_fragment" />
@@ -22,6 +23,9 @@
         <action
             android:id="@+id/action_navigation_logs_to_navigation_detail_logs_fragment"
             app:destination="@id/navigation_food_detail_fragment"/>
+        <action
+            android:id="@+id/action_navigation_food_list_fragment_to_userListFragment"
+            app:destination="@id/userListFragment" />
     </fragment>
 
     <fragment
@@ -29,5 +33,10 @@
         android:name="com.diusframi.feedinggood.ui.foodDetail.FoodDetailFragment"
         android:label="@string/title_food_detail"
         tools:layout="@layout/fragment_food_detail" />
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.diusframi.feedinggood.ui.userList.UserListFragment"
+        android:label="@string/title_user_list"
+        tools:layout="@layout/fragment_user_list"/>
 
 </navigation>

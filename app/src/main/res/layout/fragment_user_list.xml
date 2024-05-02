@@ -24,37 +24,14 @@
             android:paddingBottom="@dimen/tiny_175"
             android:background="@color/orange_regular">
 
-            <ImageView
-                android:id="@+id/ivLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_100"
-                android:contentDescription="@string/content_description"
-                android:src="@drawable/ic_logout"
-                app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
-
-            <ImageView
-                android:id="@+id/ivUserList"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/normal_100"
-                android:contentDescription="@string/content_description"
-                android:src="@drawable/ic_user"
-                app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
-                app:layout_constraintStart_toEndOf="@+id/ivLogout"
-                app:layout_constraintTop_toTopOf="@+id/tvTitle" />
-
             <TextView
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_150"
-                android:textColor="@color/black"
                 android:textSize="@dimen/text_normal_150"
                 android:textStyle="bold"
-                android:text="@string/food_list_adapter_title"
+                android:text="@string/user_list_adapter_title"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -65,7 +42,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/normal_100"
                 android:contentDescription="@string/content_description"
-                android:tint="@color/black"
                 android:src="@drawable/ic_delete"
                 app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -97,13 +73,13 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvLogs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/small_100"
-                app:layout_constraintTop_toBottomOf="@+id/clList"
-                tools:listitem="@layout/food_list_item" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_100"
+            app:layout_constraintTop_toBottomOf="@+id/clList"
+            tools:listitem="@layout/user_list_item" />
 
         <TextView
             android:id="@+id/tvEmptyList"
@@ -121,7 +97,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,6 +108,6 @@
         android:contentDescription="@string/content_description"
         android:src="@drawable/ic_add"
         app:fabSize="mini"
-        app:tint="@color/white" />
+        app:tint="@color/white" />-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

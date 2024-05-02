@@ -1,4 +1,4 @@
-package com.diusframi.feedinggood.ui.foodList
+package com.diusframi.feedinggood.ui.userList
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,27 +8,22 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.diusframi.feedinggood.FeedingGoodApplication.Companion.preferences
 import com.diusframi.feedinggood.R
-import com.diusframi.feedinggood.data.localdb.model.FoodEntity
-import com.diusframi.feedinggood.databinding.FragmentFoodListBinding
+import com.diusframi.feedinggood.data.localdb.model.UserLoginEntity
+import com.diusframi.feedinggood.databinding.FragmentUserListBinding
 import com.diusframi.feedinggood.utils.DATE_FORMAT_FOOD
-import com.diusframi.feedinggood.utils.DialogWithTwoButtons
-import com.diusframi.feedinggood.utils.MY_FOOD_DETAIL_KEY
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
+class UserListFragment : Fragment(), UserListAdapter.ItemClickListener {
 
-    private var _binding: FragmentFoodListBinding? = null
+    private var _binding: FragmentUserListBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: FoodListViewModel by viewModels()
-
-    private var modalTwoButtons: DialogWithTwoButtons? = null
+    private val viewModel: UserListViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,7 +31,7 @@ class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentFoodListBinding.inflate(inflater, container, false)
+        _binding = FragmentUserListBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -51,49 +46,27 @@ class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
 
     private fun observeViewModel() {
         lifecycleScope.launch {
-            viewModel.getFoodListVM()?.observe(viewLifecycleOwner) {
+            viewModel.getUserListVM()?.observe(viewLifecycleOwner) {
                 loadData(it)
             }
         }
     }
 
     private fun initListeners() {
-        binding.fabTest.setOnClickListener {
-            showModalTwoButtons()
-        }
-
         binding.ivDeleteAll.setOnClickListener {
 
             val areYouSure = AlertDialog.Builder(requireActivity())
             areYouSure.setMessage(R.string.alert_are_you_sure_text)
                 .setCancelable(false)
                 .setPositiveButton(R.string.alert_accept) { _, _ ->
-                    viewModel.deleteAllFoodVM()
+                    viewModel.deleteAllUsersVM()
                 }
                 .setNegativeButton(R.string.alert_cancel) { _, _ ->}
             areYouSure.show()
-        }
-
-        binding.ivLogout.setOnClickListener {
-
-            val areYouSure = AlertDialog.Builder(requireActivity())
-            areYouSure.setMessage(R.string.alert_are_you_sure_logout)
-                .setCancelable(false)
-                .setPositiveButton(R.string.alert_accept) { _, _ ->
-                    preferences.saveKeepSession(false)
-
-                    activity?.supportFragmentManager?.popBackStack()
-                }
-                .setNegativeButton(R.string.alert_cancel) { _, _ ->}
-            areYouSure.show()
-        }
-
-        binding.ivUserList.setOnClickListener {
-            findNavController().navigate(R.id.userListFragment)
         }
     }
 
-    private fun loadData(list: List<FoodEntity>?) {
+    private fun loadData(list: List<UserLoginEntity>?) {
 
         if (list.isNullOrEmpty()) {
             binding.rvLogs.visibility = View.GONE
@@ -113,40 +86,22 @@ class FoodListFragment : Fragment(), FoodListAdapter.ItemClickListener {
             binding.rvLogs.layoutManager = layoutManager
             binding.rvLogs.setHasFixedSize(true)
 
-            binding.rvLogs.adapter = FoodListAdapter(requireContext(), collectionsReverse(list), this)
+            binding.rvLogs.adapter = UserListAdapter(requireContext(), collectionsReverse(list), this)
         }
     }
 
-    private fun collectionsReverse(source: List<FoodEntity>): List<FoodEntity> {
+    private fun collectionsReverse(source: List<UserLoginEntity>): List<UserLoginEntity> {
         return ArrayList(source).reversed()
     }
 
-    private fun showModalTwoButtons() {
-
-        modalTwoButtons = DialogWithTwoButtons()
-        modalTwoButtons?.show(this.childFragmentManager, modalTwoButtons!!.tag)
-    }
-
-    override fun onItemClick(item: FoodEntity) {
-        val bundle = Bundle()
-        bundle.putSerializable(MY_FOOD_DETAIL_KEY, item)
-        findNavController().navigate(R.id.navigation_food_detail_fragment, bundle)
-    }
-
-    override fun onLongItemClick(item: FoodEntity) {
-
+    override fun onLongItemClick(item: UserLoginEntity) {
         val areYouSure = AlertDialog.Builder(requireActivity())
         areYouSure.setMessage(R.string.alert_are_you_sure_text_single)
             .setCancelable(false)
             .setPositiveButton(R.string.alert_accept) { _, _ ->
-                viewModel.deleteFoodVM(item)
+                viewModel.deleteUserVM(item)
             }
             .setNegativeButton(R.string.alert_cancel) { _, _ ->}
         areYouSure.show()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }
