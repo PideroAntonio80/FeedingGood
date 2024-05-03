@@ -43,7 +43,7 @@ class DialogRegister : BaseDialog<DialogRegisterBinding>() {
                 if (etName.text?.isEmpty() == false && etPass.text?.isEmpty() == false) {
 
                     val newUserLoginEntity = UserLoginEntity(
-                        userName = etName.text.toString(),
+                        userName = etName.text.toString().trim(),
                         password = etPass.text.toString(),
                         date = System.currentTimeMillis())
 

@@ -47,7 +47,7 @@ class DialogWithTwoButtons : BaseDialog<DialogWithTwoButtonsBinding>() {
                     etProteins.text?.isEmpty() == false) {
 
                     val newFoodEntity = FoodEntity(
-                        name = etName.text.toString().replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() },
+                        name = etName.text.toString().trim().replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() },
                         type = etType.text.toString(),
                         isVegetable = cbIsVegetable.isChecked,
                         calories = etCalories.text.toString(),
